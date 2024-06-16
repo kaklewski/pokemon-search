@@ -1,14 +1,14 @@
 .pokemonGrid {
 	display: flex;
 	flex-direction: column;
-	gap: 8px;
+	gap: 10px;
 	margin: 0 auto;
 	width: 100%;
-	max-width: 800px;
+	max-width: 600px;
 }
 
 .header {
-	text-align: center;
+	margin-inline: auto;
 }
 
 .listContainer {
@@ -20,8 +20,18 @@
 .pokemon {
 	transition-duration: 200ms;
 	cursor: pointer;
+	padding: 5px;
+	border-radius: 5px;
 }
 
 .pokemon:hover {
-	padding-left: 4px;
+	/* padding-left: 15px; */
+	background-color: grey;
+	color: black;
+}
+
+.search {
+	padding: 15px;
+	border-radius: 5px;
+	font-size: 16px;
 }
