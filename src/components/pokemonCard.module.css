@@ -1,14 +1,22 @@
 .card {
-	max-width: 700px;
+	max-width: 600px;
 	width: 100%;
 	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
-	gap: 4px;
+	gap: 5px;
 }
 
-.headerBar{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.headerBar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.closeBtn {
+	cursor: pointer;
+	background-color: grey;
+	line-height: 0;
+	padding: 8px;
+	border-radius: 50%;
 }
