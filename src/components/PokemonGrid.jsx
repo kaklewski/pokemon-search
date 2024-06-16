@@ -6,17 +6,14 @@ async function fetchData(url) {
 	return response.json();
 }
 
-export default function PokemonGrid() {
+export default function PokemonGrid(props) {
+	const { handleSelectPokemon, url } = props;
 	const [search, setSearch] = useState('');
-
-	const url = 'https://pokeapi.co/api/v2/pokemon/';
 
 	let data;
 	if (localStorage.getItem('pokemon-cards')) {
 		data = JSON.parse(localStorage.getItem('pokemon-cards'));
-		console.log('FETCHED FROM CACHE', console.log(data));
 	} else {
-		console.log('FETCHED FROM API');
 		data = use(fetchData(url));
 		localStorage.setItem('pokemon-cards', JSON.stringify(data));
 	}
@@ -30,16 +27,20 @@ export default function PokemonGrid() {
 					value={search}
 					onChange={(e) => setSearch(e.target.value)}
 				/>
-        {data.results.filter(value => {
-          return value.name.includes(search)
-        }).map((pokemon, pokemonIndex) => {
-          return(
-            <div key={pokemonIndex} className={styles.pokemon}>
-              {pokemon.name}
-            </div>
-
-          )
-        })}
+				{data.results
+					.filter((value) => {
+						return value.name.includes(search);
+					})
+					.map((pokemon, pokemonIndex) => {
+						return (
+							<div
+								onClick={handleSelectPokemon(pokemon.name)}
+								key={pokemonIndex}
+								className={styles.pokemon}>
+								{pokemon.name}
+							</div>
+						);
+					})}
 			</div>
 		</div>
 	);
