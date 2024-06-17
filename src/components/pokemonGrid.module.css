@@ -1,14 +1,56 @@
 .pokemonGrid {
 	display: flex;
 	flex-direction: column;
-	gap: 10px;
-	margin: 0 auto;
 	width: 100%;
-	max-width: 600px;
 }
 
 .header {
+	padding: 30px;
+	background-color: #cc0000;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.headerContainer {
+	display: flex;
+	flex-direction: column;
+	max-width: 700px;
 	margin-inline: auto;
+}
+
+.headerContainer > img {
+	margin-inline: auto;
+}
+
+.headerContainer > h1 {
+	margin-inline: auto;
+	color: white;
+	font-weight: normal;
+	letter-spacing: -1px;
+}
+
+.searchBar {
+	position: relative;
+	background-color: white;
+	border-radius: 100px;
+	box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+	overflow: hidden;
+}
+
+.searchBar > input {
+	width: 100%;
+	padding: 15px 15px 15px 50px;
+	background: none;
+	border: none;
+	outline: none;
+	font-size: 16px;
+	color: black;
+}
+
+.searchBar > svg {
+	position: absolute;
+	top: 50%;
+	left: 13px;
+	transform: translateY(-50%);
 }
 
 .listContainer {
@@ -28,10 +70,4 @@
 	/* padding-left: 15px; */
 	background-color: grey;
 	color: black;
-}
-
-.search {
-	padding: 15px;
-	border-radius: 5px;
-	font-size: 16px;
 }
