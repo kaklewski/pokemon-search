@@ -34,7 +34,11 @@ export default function PokemonCard(props) {
 					</svg>
 				</div>
 			</div>
-			<img src={data.sprites.front_default} alt={selectedPokemon} />
+			{/* <img src={data.sprites.front_default} alt={selectedPokemon} /> */}
+			<img
+				src={data.sprites.other['official-artwork'].front_default}
+				alt={selectedPokemon}
+			/>
 			<h3>Stats</h3>
 			{data.stats.map((stat, statIndex) => {
 				return (
