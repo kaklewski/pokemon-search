@@ -1,8 +1,5 @@
-# React + Vite
+[Link 1](https://dribbble.com/shots/16695095-Pok-mon-App-User-Interface)
+[Link 2](https://dribbble.com/shots/17031043-Pok-dex-Application-UI-Look-Feel)
+[Link 3](https://dribbble.com/shots/17031004-Pok-mon-Application-UI-Components)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[Icons](https://tabler.io/icons)
