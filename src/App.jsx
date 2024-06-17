@@ -1,6 +1,6 @@
 import { useState, Suspense } from 'react';
 import ErrorBoundary from './ErrorBoundary';
-import PokemonCard from './components/PokemonCard';
+import PokemonProfile from './components/PokemonProfile';
 import PokemonGrid from './components/PokemonGrid';
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
 			<Suspense fallback={<div>Loading...</div>}>
 				<div className='App'>
 					{selectedPokemon ? (
-						<PokemonCard
+						<PokemonProfile
 							parentUrl={url}
 							selectedPokemon={selectedPokemon}
 							clearHandler={() => setSelectedPokemon(null)}

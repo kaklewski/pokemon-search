@@ -1,5 +1,5 @@
 import React, { use } from 'react';
-import styles from './pokemonCard.module.css';
+import styles from './pokemonProfile.module.css';
 
 async function fetchData(url) {
 	const response = await fetch(url);
