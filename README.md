@@ -3,3 +3,5 @@
 [Link 3](https://dribbble.com/shots/17031004-Pok-mon-Application-UI-Components)
 
 [Icons](https://tabler.io/icons)
+
+[Shadows](https://getcssscan.com/css-box-shadow-examples)
