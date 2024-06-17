@@ -51,24 +51,23 @@ export default function PokemonGrid(props) {
 				</div>
 			</div>
 
+
 			<div className={styles.listContainer}>
-				<div>
-					{data.results
-						.filter((value) => {
-							return value.name.includes(search);
-						})
-						.map((pokemon, pokemonIndex) => {
-							return (
-								<div
-									onClick={handleSelectPokemon(pokemon.name)}
-									key={pokemonIndex}
-									className={styles.pokemon}>
-									{pokemon.name.charAt(0).toUpperCase() +
-										pokemon.name.slice(1)}
-								</div>
-							);
-						})}
-				</div>
+				{data.results
+					.filter((value) => {
+						return value.name.includes(search);
+					})
+					.map((pokemon, pokemonIndex) => {
+						return (
+							<div
+								onClick={handleSelectPokemon(pokemon.name)}
+								key={pokemonIndex}
+								className={styles.pokemon}>
+								{pokemon.name.charAt(0).toUpperCase() +
+									pokemon.name.slice(1)}
+							</div>
+						);
+					})}
 			</div>
 		</div>
 	);

@@ -5,25 +5,27 @@
 }
 
 .header {
-	padding: 30px;
+	padding: 30px 0;
 	background-color: #cc0000;
-	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .headerContainer {
 	display: flex;
 	flex-direction: column;
-	max-width: 700px;
+	max-width: min(700px, 90%);
 	margin-inline: auto;
 }
 
 .headerContainer > img {
+	max-width: 100%;
 	margin-inline: auto;
 }
 
 .headerContainer > h1 {
 	margin-inline: auto;
 	color: white;
+	text-align: center;
 	font-weight: normal;
 	letter-spacing: -1px;
 }
@@ -32,7 +34,10 @@
 	position: relative;
 	background-color: white;
 	border-radius: 100px;
-	box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+	/* box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+	 */
+	box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px 0px inset,
+		rgba(17, 17, 26, 0.05) 0px 8px 32px 0px;
 	overflow: hidden;
 }
 
@@ -54,20 +59,24 @@
 }
 
 .listContainer {
-	display: flex;
-	flex-direction: column;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
 	gap: 10px;
+	max-width: min(700px, 90%);
+	margin-inline: auto;
+	padding: 30px 0;
 }
 
 .pokemon {
+	aspect-ratio: 1 / 1;
+	padding: 5px;
+	background-color: white;
+	border-radius: 5px;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 	transition-duration: 200ms;
 	cursor: pointer;
-	padding: 5px;
-	border-radius: 5px;
 }
 
 .pokemon:hover {
-	/* padding-left: 15px; */
-	background-color: grey;
-	color: black;
+	transform: translateY(-2%);
 }
