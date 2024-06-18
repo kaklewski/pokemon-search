@@ -7,6 +7,11 @@ async function fetchData(url) {
 	return response.json();
 }
 
+function capitalizeFirstLetter(word) {
+	if (typeof word !== 'string') return;
+	return word.charAt(0).toUpperCase() + word.slice(1);
+}
+
 export default function PokemonGrid(props) {
 	const { handleSelectPokemon, url } = props;
 	const [search, setSearch] = useState('');
@@ -18,6 +23,8 @@ export default function PokemonGrid(props) {
 		data = use(fetchData(url));
 		localStorage.setItem('pokemon-cards', JSON.stringify(data));
 	}
+
+	// console.log(data); // DO WYWALENIA
 
 	return (
 		<div className={styles.pokemonGrid}>
@@ -51,7 +58,6 @@ export default function PokemonGrid(props) {
 				</div>
 			</div>
 
-
 			<div className={styles.listContainer}>
 				{data.results
 					.filter((value) => {
@@ -60,11 +66,10 @@ export default function PokemonGrid(props) {
 					.map((pokemon, pokemonIndex) => {
 						return (
 							<div
-								onClick={handleSelectPokemon(pokemon.name)}
 								key={pokemonIndex}
+								onClick={handleSelectPokemon(pokemon.name)}
 								className={styles.pokemon}>
-								{pokemon.name.charAt(0).toUpperCase() +
-									pokemon.name.slice(1)}
+								{capitalizeFirstLetter(pokemon.name)}
 							</div>
 						);
 					})}

@@ -34,8 +34,6 @@
 	position: relative;
 	background-color: white;
 	border-radius: 100px;
-	/* box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
-	 */
 	box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px 0px inset,
 		rgba(17, 17, 26, 0.05) 0px 8px 32px 0px;
 	overflow: hidden;
@@ -78,5 +76,5 @@
 }
 
 .pokemon:hover {
-	transform: translateY(-2%);
+	transform: translateY(-2%) scale(102%);
 }

@@ -1,23 +1,127 @@
-.card {
-	max-width: 600px;
-	width: 100%;
-	margin: 0 auto;
-	display: flex;
-	flex-direction: column;
-	gap: 5px;
+.navBar {
+	padding: 30px 0;
+	background-color: #cc0000;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
-.headerBar {
+.navBarContainer {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	max-width: min(700px, 90%);
+	margin-inline: auto;
+}
+
+.navBarContainer > h1 {
+	margin: 0;
+	color: white;
+	font-weight: normal;
+	letter-spacing: -1px;
 }
 
 .closeBtn {
-	cursor: pointer;
-	background-color: grey;
+	background: none;
+	border: none;
+	color: white;
 	line-height: 0;
-	padding: 8px;
-	border-radius: 50%;
-	color: black;
+	cursor: pointer;
+	transition-duration: 200ms;
+}
+
+.closeBtn svg {
+	width: 35px;
+	height: 35px;
+}
+
+.closeBtn:hover {
+	transform: scale(115%);
+}
+
+.bodyContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	max-width: min(700px, 90%);
+	margin-inline: auto;
+	padding: 30px 0;
+}
+
+.infoBox {
+	padding: 15px;
+	background-color: white;
+	border-radius: 15px;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.infoBox > h3 {
+	margin-top: 0;
+}
+
+.infoBox > img {
+	display: block;
+	width: min(475px, 100%);
+	margin-inline: auto;
+}
+
+.types {
+	display: flex;
+	gap: 5px;
+}
+
+.type {
+	padding: 5px 15px;
+	background-color: grey;
+	border-radius: 50px;
+}
+
+.type[data-type='normal'] {
+	background-color: #aab09f;
+}
+.type[data-type='fire'] {
+	background-color: #ea7a3c;
+}
+.type[data-type='water'] {
+	background-color: #539ae2;
+}
+.type[data-type='electric'] {
+	background-color: #e5c531;
+}
+.type[data-type='grass'] {
+	background-color: #71c558;
+}
+.type[data-type='ice'] {
+	background-color: #70cbd4;
+}
+.type[data-type='fighting'] {
+	background-color: #cb5f48;
+}
+.type[data-type='poison'] {
+	background-color: #b468b7;
+}
+.type[data-type='ground'] {
+	background-color: #cc9f4f;
+}
+.type[data-type='flying'] {
+	background-color: #7da6de;
+}
+.type[data-type='psychic'] {
+	background-color: #e5709b;
+}
+.type[data-type='bug'] {
+	background-color: #94bc4a;
+}
+.type[data-type='rock'] {
+	background-color: #b2a061;
+}
+.type[data-type='ghost'] {
+	background-color: #846ab6;
+}
+.type[data-type='dragon'] {
+	background-color: #6a7baf;
+}
+.type[data-type='dark'] {
+	background-color: #736c75;
+}
+.type[data-type='steel'] {
+	background-color: #89a1b0;
 }
