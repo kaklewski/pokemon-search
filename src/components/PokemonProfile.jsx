@@ -1,5 +1,6 @@
 import React, { use } from 'react';
 import styles from './pokemonProfile.module.css';
+import PokemonStat from './PokemonStat';
 
 async function fetchData(url) {
 	const response = await fetch(url);
@@ -55,15 +56,16 @@ export default function PokemonCard(props) {
 							<path d='M5 12l6 -6' />
 						</svg>
 					</button>
-					<h1>
-						{displayId(data.id)}{' '}
-						{capitalizeFirstLetter(selectedPokemon)}
-					</h1>
+					<span>Pokémon Profile</span>
 				</div>
 			</div>
 
 			<div className={styles.bodyContainer}>
 				<div className={styles.infoBox}>
+					<h1>
+						<span>{capitalizeFirstLetter(selectedPokemon)}</span>
+						<span className={styles.id}>{displayId(data.id)}</span>
+					</h1>
 					<img
 						src={
 							data.sprites.other['official-artwork'].front_default
@@ -74,23 +76,42 @@ export default function PokemonCard(props) {
 
 				<div className={styles.infoBox}>
 					<h3>Stats</h3>
-					<table className={styles.stats}>
-						{data.stats.map((stat, statIndex) => {
-							return (
-								<tr>
-									<td key={statIndex}>{stat.stat.name}</td>
-									<td>{stat.base_stat}</td>
-								</tr>
-							);
-						})}
-					</table>
 
-					{/* <div>
-						<p>HP</p>
-						<div className={styles.statContainer}>
-							<div style={width:{sta}}></div>
-						</div>
-					</div> */}
+					<p className={styles.statLabel}>HP</p>
+					<PokemonStat
+						statValue={data.stats[0].base_stat}
+						statType={data.stats[0].stat.name}
+					/>
+
+					<p className={styles.statLabel}>Attack</p>
+					<PokemonStat
+						statValue={data.stats[1].base_stat}
+						statType={data.stats[1].stat.name}
+					/>
+
+					<p className={styles.statLabel}>Defense</p>
+					<PokemonStat
+						statValue={data.stats[2].base_stat}
+						statType={data.stats[2].stat.name}
+					/>
+
+					<p className={styles.statLabel}>Special Attack</p>
+					<PokemonStat
+						statValue={data.stats[3].base_stat}
+						statType={data.stats[3].stat.name}
+					/>
+
+					<p className={styles.statLabel}>Special Defense</p>
+					<PokemonStat
+						statValue={data.stats[4].base_stat}
+						statType={data.stats[4].stat.name}
+					/>
+
+					<p className={styles.statLabel}>Speed</p>
+					<PokemonStat
+						statValue={data.stats[5].base_stat}
+						statType={data.stats[5].stat.name}
+					/>
 				</div>
 
 				<div className={styles.infoBox}>
