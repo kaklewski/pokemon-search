@@ -72,6 +72,36 @@ export default function PokemonCard(props) {
 						}
 						alt={selectedPokemon}
 					/>
+					<div className={styles.types}>
+						{data.types.map((type, typeIndex) => {
+							return (
+								<span
+									key={typeIndex}
+									className={styles.type}
+									data-type={type.type.name}>
+									{capitalizeFirstLetter(type.type.name)}
+								</span>
+							);
+						})}
+					</div>
+				</div>
+
+				<div className={styles.infoBox}>
+					<h3>Size</h3>
+					<div className={styles.sizeItems}>
+						<div className={styles.sizeItem}>
+							<span className={styles.sizeTitle}>Height</span>
+							<span className={styles.sizeData}>
+								{data.height * 10} cm
+							</span>
+						</div>
+						<div className={styles.sizeItem}>
+							<span className={styles.sizeTitle}>Weight</span>
+							<span className={styles.sizeData}>
+								{data.weight / 10} kg
+							</span>
+						</div>
+					</div>
 				</div>
 
 				<div className={styles.infoBox}>
@@ -112,22 +142,6 @@ export default function PokemonCard(props) {
 						statValue={data.stats[5].base_stat}
 						statType={data.stats[5].stat.name}
 					/>
-				</div>
-
-				<div className={styles.infoBox}>
-					<h3>Types</h3>
-					<div className={styles.types}>
-						{data.types.map((type, typeIndex) => {
-							return (
-								<span
-									key={typeIndex}
-									className={styles.type}
-									data-type={type.type.name}>
-									{capitalizeFirstLetter(type.type.name)}
-								</span>
-							);
-						})}
-					</div>
 				</div>
 
 				<div className={styles.infoBox}>

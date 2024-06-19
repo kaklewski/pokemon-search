@@ -57,12 +57,11 @@ h1 {
 	justify-content: space-between;
 	margin-top: 0;
 	font-weight: normal;
-	/* text-align: center; */
 	letter-spacing: -1px;
 }
 
 h1 .id {
-	color: rgba(0, 0, 0, 0.5);
+	color: #82878c;
 }
 
 h3 {
@@ -73,6 +72,33 @@ h3 {
 	display: block;
 	width: min(320px, 100%);
 	margin-inline: auto;
+	margin-bottom: 2em;
+}
+
+.sizeItems {
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+
+.sizeItem {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 5px;
+}
+
+.sizeTitle {
+	color: #82878c;
+	font-weight: bold;
+}
+
+.sizeData {
+	padding: 15px 90px;
+	background-color: #f8f9fa;
+	border: 2px solid #c3c3c3;
+	border-radius: 15px;
 }
 
 .statLabel {
@@ -136,6 +162,7 @@ h3 {
 
 .types {
 	display: flex;
+	justify-content: center;
 	gap: 5px;
 	flex-wrap: wrap;
 }
