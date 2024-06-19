@@ -132,7 +132,18 @@ export default function PokemonCard(props) {
 
 				<div className={styles.infoBox}>
 					<h3>Moves</h3>
-					<div>{/* {data.moves.toString()} */}</div>
+					<div className={styles.moves}>
+						{data.moves.map((move, moveIndex) => {
+							return (
+								<span
+									key={moveIndex}
+									className={styles.move}
+									data-move={move.move.name}>
+									{capitalizeFirstLetter(move.move.name)}
+								</span>
+							);
+						})}
+					</div>
 				</div>
 			</div>
 		</div>
