@@ -11,15 +11,25 @@ function capitalizeFirstLetter(word) {
 	return word.charAt(0).toUpperCase() + word.slice(1);
 }
 
-function displayId(id){
-return '#' + id.toString().padStart(3,'0')
+function displayId(id) {
+	return '#' + id.toString().padStart(3, '0');
 }
 
 export default function PokemonCard(props) {
 	const { selectedPokemon, clearHandler, parentUrl } = props;
 	const pokemonUrl = parentUrl + selectedPokemon;
 
-	const data = use(fetchData(pokemonUrl));
+	let data;
+	if (sessionStorage.getItem(selectedPokemon)) {
+		data = JSON.parse(sessionStorage.getItem(selectedPokemon));
+	} else {
+		data = use(fetchData(pokemonUrl));
+		sessionStorage.setItem(selectedPokemon, JSON.stringify(data));
+	}
+
+	// const data = use(fetchData(pokemonUrl));
+
+	// console.log(selectedPokemon);
 
 	// console.log(data); // DO WYWALENIA
 
@@ -45,7 +55,10 @@ export default function PokemonCard(props) {
 							<path d='M5 12l6 -6' />
 						</svg>
 					</button>
-					<h1>{capitalizeFirstLetter(selectedPokemon)} {displayId(data.id)}</h1>
+					<h1>
+						{displayId(data.id)}{' '}
+						{capitalizeFirstLetter(selectedPokemon)}
+					</h1>
 				</div>
 			</div>
 
@@ -61,14 +74,23 @@ export default function PokemonCard(props) {
 
 				<div className={styles.infoBox}>
 					<h3>Stats</h3>
-					{data.stats.map((stat, statIndex) => {
-						return (
-							<p key={statIndex}>
-								<b>{stat.stat.name}: </b>
-								{stat.base_stat}
-							</p>
-						);
-					})}
+					<table className={styles.stats}>
+						{data.stats.map((stat, statIndex) => {
+							return (
+								<tr>
+									<td key={statIndex}>{stat.stat.name}</td>
+									<td>{stat.base_stat}</td>
+								</tr>
+							);
+						})}
+					</table>
+
+					{/* <div>
+						<p>HP</p>
+						<div className={styles.statContainer}>
+							<div style={width:{sta}}></div>
+						</div>
+					</div> */}
 				</div>
 
 				<div className={styles.infoBox}>
@@ -76,12 +98,20 @@ export default function PokemonCard(props) {
 					<div className={styles.types}>
 						{data.types.map((type, typeIndex) => {
 							return (
-								<span key={typeIndex} className={styles.type} data-type={type.type.name} >
+								<span
+									key={typeIndex}
+									className={styles.type}
+									data-type={type.type.name}>
 									{capitalizeFirstLetter(type.type.name)}
 								</span>
 							);
 						})}
 					</div>
+				</div>
+
+				<div className={styles.infoBox}>
+					<h3>Moves</h3>
+					<div>{/* {data.moves.toString()} */}</div>
 				</div>
 			</div>
 		</div>
