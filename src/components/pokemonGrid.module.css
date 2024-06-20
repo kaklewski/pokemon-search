@@ -66,10 +66,14 @@
 }
 
 .pokemon {
-	min-width: 210px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 5px;
+	min-width: 200px;
 	max-width: 230px;
-	aspect-ratio: 1 / 1;
-	padding: 5px;
+	/* aspect-ratio: 1 / 1; */
+	padding: 10px;
 	background-color: white;
 	border-radius: 5px;
 	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -78,5 +82,10 @@
 }
 
 .pokemon:hover {
-	transform: translateY(-2%) scale(102%);
+	transform: translateY(-2%) scale(104%) rotate(1deg);
+}
+
+.pokeId {
+	color: #82878c;
+	font-size: 13px;
 }
