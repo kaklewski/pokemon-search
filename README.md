@@ -1,4 +1,4 @@
-# Pokémon Search (React)
+# Pokémon Search
 
 ## Table of contents
 
@@ -32,11 +32,11 @@ Created with:
 
 1. Clone the project to your local machine:
 
-`git clone https://github.com/kaklewski/react-pokemon-api`
+`git clone https://github.com/kaklewski/pokemon-search`
 
 2. Navigate to the project directory:
 
-`cd react-pokemon-api`
+`cd pokemon-search`
 
 3. Install the dependencies:
 
