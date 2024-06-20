@@ -66,6 +66,8 @@
 }
 
 .pokemon {
+	min-width: 210px;
+	max-width: 230px;
 	aspect-ratio: 1 / 1;
 	padding: 5px;
 	background-color: white;
