@@ -28,12 +28,6 @@ export default function PokemonCard(props) {
 		sessionStorage.setItem(selectedPokemon, JSON.stringify(data));
 	}
 
-	// const data = use(fetchData(pokemonUrl));
-
-	// console.log(selectedPokemon);
-
-	// console.log(data); // DO WYWALENIA
-
 	return (
 		<div>
 			<div className={styles.navBar}>
