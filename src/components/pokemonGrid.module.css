@@ -82,7 +82,7 @@
 }
 
 .pokemon:hover {
-	transform: translateY(-2%) scale(104%) rotate(1deg);
+	transform: translateY(-2%) scale(110%) rotate(1deg);
 }
 
 .pokeId {
