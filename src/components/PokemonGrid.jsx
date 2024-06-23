@@ -2,16 +2,19 @@ import React, { use, useState } from 'react';
 import styles from './pokemonGrid.module.css';
 import logo from '../assets/logo.png';
 
+// Fetch data from the URL
 async function fetchData(url) {
 	const response = await fetch(url);
 	return response.json();
 }
 
+// Capitalize the first letter of a string
 function capitalizeFirstLetter(word) {
 	if (typeof word !== 'string') return;
 	return word.charAt(0).toUpperCase() + word.slice(1);
 }
 
+// Display pokemon number as 3 digit long ID with a hashtag. It increases the initial number by 1, because the numbers come from the pokemonNames array
 function displayId(number) {
 	return '#' + (number + 1).toString().padStart(3, '0');
 }
@@ -20,6 +23,7 @@ export default function PokemonGrid(props) {
 	const { handleSelectPokemon, url } = props;
 	const [search, setSearch] = useState('');
 
+	// Check if pokemon data is available in the local storage. If so, load it. If not, fetch it and save to the local storage
 	let data;
 	if (localStorage.getItem('pokemon-cards')) {
 		data = JSON.parse(localStorage.getItem('pokemon-cards'));
@@ -28,6 +32,7 @@ export default function PokemonGrid(props) {
 		localStorage.setItem('pokemon-cards', JSON.stringify(data));
 	}
 
+	// Make an array of all pokemon names. It is necessary to display pokemon IDs
 	const pokemonNames = data.results.map((pokemon) => pokemon.name);
 
 	return (

@@ -2,16 +2,19 @@ import React, { use } from 'react';
 import styles from './pokemonProfile.module.css';
 import PokemonStat from './PokemonStat';
 
+// Fetch data from the URL
 async function fetchData(url) {
 	const response = await fetch(url);
 	return response.json();
 }
 
+// Capitalize the first letter of a string
 function capitalizeFirstLetter(word) {
 	if (typeof word !== 'string') return;
 	return word.charAt(0).toUpperCase() + word.slice(1);
 }
 
+// Display pokemon number as 3 digit long ID with a hashtag
 function displayId(id) {
 	return '#' + id.toString().padStart(3, '0');
 }
@@ -20,6 +23,7 @@ export default function PokemonCard(props) {
 	const { selectedPokemon, clearHandler, parentUrl } = props;
 	const pokemonUrl = parentUrl + selectedPokemon;
 
+	// Check if pokemon data is available in the session storage. If so, load it. If not, fetch it and save to the session storage with a pokemon name as the key
 	let data;
 	if (sessionStorage.getItem(selectedPokemon)) {
 		data = JSON.parse(sessionStorage.getItem(selectedPokemon));
