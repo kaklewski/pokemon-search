@@ -28,6 +28,8 @@ export default function PokemonGrid(props) {
 		localStorage.setItem('pokemon-cards', JSON.stringify(data));
 	}
 
+	const pokemonNames = data.results.map((pokemon) => pokemon.name);
+
 	return (
 		<div className={styles.pokemonGrid}>
 			<div className={styles.header}>
@@ -71,7 +73,9 @@ export default function PokemonGrid(props) {
 								onClick={handleSelectPokemon(pokemon.name)}
 								className={styles.pokemon}>
 								<span className={styles.pokeId}>
-									{displayId(pokemonIndex)}
+									{displayId(
+										pokemonNames.indexOf(pokemon.name)
+									)}
 								</span>
 								<span>
 									{capitalizeFirstLetter(pokemon.name)}
