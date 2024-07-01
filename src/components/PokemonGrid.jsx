@@ -36,7 +36,7 @@ export default function PokemonGrid(props) {
 	const pokemonNames = data.results.map((pokemon) => pokemon.name);
 
 	return (
-		<div className={styles.pokemonGrid}>
+		<div >
 			<div className={styles.header}>
 				<div className={styles.headerContainer}>
 					<img src={logo} />
