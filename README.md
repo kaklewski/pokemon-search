@@ -4,6 +4,10 @@
 
 Pokémon Search is a React based app built to practice and enhance my coding skills in React.js and get familiar with Vite. It leverages the PokéAPI to fetch and display information about various 1st gen Pokémon.
 
+## Live Version
+
+Available at: https://kaklewski.github.io/pokemon-search/
+
 ## Features
 
 -   **Pokémon List**: Browse through a list of Pokémon fetched from the PokéAPI.
