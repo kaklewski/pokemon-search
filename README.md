@@ -1,34 +1,28 @@
 # Pokémon Search
 
-## Table of contents
+## About
 
--   [General info](#general-info)
--   [Features](#features)
--   [Technologies](#technologies)
--   [Getting started](#getting-started)
--   [Resources](#resources)
-
-## General info
-
-Pokémon Search is a simple React app built to practice and enhance my coding skills in React.js and get familiar with Vite. It leverages the PokéAPI to fetch and display data about various 1st gen Pokémon.
+Pokémon Search is a React based app built to practice and enhance my coding skills in React.js and get familiar with Vite. It leverages the PokéAPI to fetch and display information about various 1st gen Pokémon.
 
 ## Features
 
 -   **Pokémon List**: Browse through a list of Pokémon fetched from the PokéAPI.
 -   **Search Functionality**: Search for specific Pokémon by name.
+-   **Save Bandwidth**: All fetched Pokémon data is kept in Local Storage and Pokémon profile data is kept in te Session Storage.
 -   **Detailed View**: Click on a Pokémon to view detailed information including its stats, moves, size and types.
 -   **Responsive Design**: The app is designed to be fully responsive, providing a seamless experience on both desktop and mobile devices.
 
-## Technologies
+## Screenshots
 
-Created with:
+![Screenshot 1](screenshots/screenshot1.png)
 
--   React 18.2
--   Vite 5.2
+![Screenshot 2](screenshots/screenshot2.png)
 
-## Getting started
+![Screenshot 3](screenshots/screenshot3.png)
 
-### How to run the project?
+![Screenshot 4](screenshots/screenshot4.png)
+
+## Run Locally
 
 1. Clone the project to your local machine:
 
@@ -46,20 +40,12 @@ Created with:
 
 `npm run dev`
 
-### How to build the project?
+## Build with Vite
 
--   Run `npm run build` to build the distribution.
--   Run `npm run preview` to preview the build.
+1. Build the dist:
 
-## Resources
+`npm run build`
 
-PokéAPI: [Link](https://pokeapi.co/)
+2. Preview the build:
 
-Visually inspired by the Pokémon Application by Priscila K.:
-[Link 1](https://dribbble.com/shots/16695095-Pok-mon-App-User-Interface),
-[Link 2](https://dribbble.com/shots/17031043-Pok-dex-Application-UI-Look-Feel),
-[Link 3](https://dribbble.com/shots/17031004-Pok-mon-Application-UI-Components)
-
-Icons: [Link](https://tabler.io/icons)
-
-Shadows: [Link](https://getcssscan.com/css-box-shadow-examples)
+`npm run preview`
